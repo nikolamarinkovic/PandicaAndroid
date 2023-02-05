@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="@color/color_background"
+
+        >
+
+
+        <TextView
+            android:id = "@+id/registerTextViewRegister"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="40dp"
+            android:text = "Registracija"
+            android:textSize = "32sp"
+            android:textStyle = "bold"
+            android:background = "@color/header_1"
+            android:textColor = "@color/white"
+            android:gravity = "center"
+
+            />
+
+        <TextView
+            android:id = "@+id/usernameTextViewRegister"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            app:layout_constraintTop_toBottomOf="@id/registerTextViewRegister"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="10dp"
+            android:text = "Korisničko ime:"
+            android:textSize = "20sp"
+            android:textStyle = "bold"
+            android:textColor = "@color/black"
+            android:gravity = "center"
+
+            />
+
+        <EditText
+            android:id="@+id/usernameEditTextRegister"
+            android:layout_width="300dp"
+
+            android:layout_height="30dp"
+            android:background="@color/white"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/usernameTextViewRegister"/>
+
+
+
+
+        <TextView
+            android:id="@+id/passwordTextViewRegister"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Lozinka:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/usernameEditTextRegister" />
+
+        <EditText
+            android:id = "@+id/passwordEditTextRegister"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+
+            app:layout_constraintTop_toBottomOf="@id/passwordTextViewRegister"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background = "@color/white"
+
+            android:inputType = "textPassword"
+            />
+
+        <TextView
+            android:id="@+id/confirmedPasswordTextViewRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Ponovljena lozinka:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/passwordEditTextRegister" />
+
+        <EditText
+            android:id = "@+id/confirmedPasswordEditTextRegister"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+
+            app:layout_constraintTop_toBottomOf="@id/confirmedPasswordTextViewRegister"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background = "@color/white"
+
+            android:inputType = "textPassword"
+            />
+
+
+        <TextView
+            android:id = "@+id/firstNameTextViewRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            app:layout_constraintTop_toBottomOf="@id/confirmedPasswordEditTextRegister"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="5dp"
+            android:text = "Ime:"
+            android:textSize = "20sp"
+            android:textStyle = "bold"
+            android:textColor = "@color/black"
+            android:gravity = "center"
+
+            />
+
+        <EditText
+            android:id="@+id/firstNameEditTextRegister"
+            android:layout_width="300dp"
+
+            android:layout_height="30dp"
+            android:background="@color/white"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/firstNameTextViewRegister"/>
+
+
+        <TextView
+            android:id="@+id/lastNameTextViewRegister"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Prezime:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/firstNameEditTextRegister" />
+
+        <EditText
+            android:id = "@+id/lastNameEditTextRegister"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+
+            app:layout_constraintTop_toBottomOf="@id/lastNameTextViewRegister"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background = "@color/white"
+
+            />
+
+        <TextView
+            android:id="@+id/phoneNumberTextViewRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Telefon:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/lastNameEditTextRegister" />
+
+        <EditText
+            android:id = "@+id/phoneNumberEditTextRegister"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+
+
+            android:inputType="phone"
+
+            app:layout_constraintTop_toBottomOf="@id/phoneNumberTextViewRegister"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background = "@color/white"
+
+            />
+
+
+        <TextView
+            android:id="@+id/addressTextViewRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Adresa:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/phoneNumberEditTextRegister" />
+
+        <EditText
+            android:id = "@+id/addressEditTextRegister"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+
+            app:layout_constraintTop_toBottomOf="@id/addressTextViewRegister"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background = "@color/white"
+
+            />
+
+
+        <Button
+            android:id = "@+id/registerButtonRegister"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+
+            android:background = "@color/button_color"
+
+            android:layout_marginTop="20dp"
+
+            app:layout_constraintTop_toBottomOf="@id/addressEditTextRegister"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text = "Registracija"
+            />
+
+        <TextView
+            android:id = "@+id/errorTextViewRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:textSize = "20sp"
+            android:textStyle = "bold"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/registerButtonRegister"
+
+            />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
