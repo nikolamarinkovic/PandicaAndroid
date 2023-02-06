@@ -9,7 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="color_background">#C2F482</color>
     <color name="dark_brown">#964B00</color>
-    <color name="yellow">#F8C030</color>
+    <color name="button">#F8C030</color>
+
+
     <color name="button_color">#CBD9842F</color>
     <color name="table_header">#5CC542</color>
     <color name="table_content">#73FF50</color>

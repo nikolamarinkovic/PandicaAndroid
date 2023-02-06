@@ -9,15 +9,22 @@ public class Packet {
 
     static {
         packets = new LinkedList<>();
+
+        packets.add(new Packet(1, "test1", 25, 25, "sds"));
+        packets.add(new Packet(2, "test2", 25, 25, "sds"));
+        packets.add(new Packet(3, "test3", 25, 25, "sds"));
+        packets.add(new Packet(4, "tes4", 25, 25, "sds"));
+
+
     }
 
     private int id;
     private String name;
-    private float price;
+    private int price;
     private int numberOfPeople;
     private String description;
 
-    public Packet(int id, String name, float price, int numberOfPeople, String description) {
+    public Packet(int id, String name, int price, int numberOfPeople, String description) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -41,11 +48,11 @@ public class Packet {
         this.name = name;
     }
 
-    public float getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

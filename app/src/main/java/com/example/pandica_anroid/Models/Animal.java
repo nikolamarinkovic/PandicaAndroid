@@ -9,11 +9,11 @@ public class Animal {
 
     static {
         animals = new LinkedList<>();
-
-        Animal a = new Animal(1,"Zirafa pera", "Zirafa pera", new LinkedList<>());
+        //TODO: prepraviti ovo
+        Animal a = new Animal(1,"Zirafa pera", "Zirafa pera", new LinkedList<>(),5);
         //Comment c1 = new Comment()
         //a.comments.add()
-        Animal b = new Animal(2, "Pingvin zika", "Pingvin zika", new LinkedList<>());
+        Animal b = new Animal(2, "Pingvin zika", "Pingvin zika", new LinkedList<>(),6);
 
         animals.add(a);
         animals.add(b);
@@ -23,7 +23,7 @@ public class Animal {
 
     }
 
-    public Animal(int id, String name, String description, List<Comment> comments) {
+    public Animal(int id, String name, String description, List<Comment> comments, int image) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -34,7 +34,15 @@ public class Animal {
     private String name;
     private String description;
     private List<Comment> comments;
+    private int image;
 
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
+    }
 
     public int getId() {
         return id;

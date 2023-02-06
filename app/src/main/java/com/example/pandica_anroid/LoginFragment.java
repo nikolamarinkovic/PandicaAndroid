@@ -56,8 +56,7 @@ public class LoginFragment extends Fragment {
             }
 
             if(User.loginCredentialsGood(username, password) == true){
-                //todo: dodati prelazak na drugu stranu
-                errorTextView.setText("Uspeh");
+                Navigation.findNavController(view2).navigate(R.id.action_loginFragment_to_buyingTicketsFragment);
                 return;
             }
             else{

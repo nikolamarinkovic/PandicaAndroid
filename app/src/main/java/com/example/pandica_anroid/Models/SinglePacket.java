@@ -5,10 +5,12 @@ import java.util.List;
 
 public class SinglePacket {
 
-    public static SinglePacket singlePacket;
+    public static List<SinglePacket> singlePackets;
 
     static {
-        singlePacket = new SinglePacket(1, "Pojedinačna karta", 400);
+        singlePackets = new LinkedList<>();
+        SinglePacket singlePacket = new SinglePacket(1, "Pojedinačna karta", 400);
+        singlePackets.add(singlePacket);
     }
 
     private int id;

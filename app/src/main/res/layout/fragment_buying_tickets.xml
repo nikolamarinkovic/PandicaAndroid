@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background"
+    >
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        >
+
+
+        <TextView
+            android:id = "@+id/BuyingTicketsTextViewBuyingTickets"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text = "Kupovina karata"
+            android:textSize = "32sp"
+            android:textStyle = "bold"
+            android:background = "@color/header_1"
+            android:textColor = "@color/white"
+            android:gravity = "center"
+
+            />
+
+        <TextView
+            android:id = "@+id/promoPacketsTextViewBuyingTickets"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:layout_constraintTop_toBottomOf="@id/BuyingTicketsTextViewBuyingTickets"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="30dp"
+            android:text = "Paketi"
+            android:textSize = "32sp"
+            android:textStyle = "bold"
+            android:background = "@color/header_2"
+            android:textColor = "@color/white"
+            android:gravity = "center"
+
+            />
+
+
+
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:id = "@+id/packetNameHeaderTextViewPromoPacketRecycler"
+            android:layout_width="100dp"
+            app:layout_constraintTop_toBottomOf="@id/promoPacketsTextViewBuyingTickets"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_height="40dp"
+            android:gravity = "center"
+            android:text = "Naziv"
+            android:background = "@color/table_header"
+            />
+
+        <TextView
+            android:id = "@+id/packetPriceHeaderTextViewPromoPacketRecycler"
+            android:layout_width="30dp"
+            app:layout_constraintTop_toTopOf="@id/packetNameHeaderTextViewPromoPacketRecycler"
+            app:layout_constraintLeft_toRightOf="@id/packetNameHeaderTextViewPromoPacketRecycler"
+            android:layout_height="40dp"
+            android:gravity = "center"
+            android:background = "@color/table_header"
+            android:text = "Cena"
+            android:textSize = "13sp"
+            />
+
+        <TextView
+            android:id = "@+id/packetNumberOfPeopleHeaderTextViewPromoPacketRecycler"
+            android:layout_width="50dp"
+            app:layout_constraintTop_toTopOf="@id/packetNameHeaderTextViewPromoPacketRecycler"
+            app:layout_constraintLeft_toRightOf="@id/packetPriceHeaderTextViewPromoPacketRecycler"
+            android:layout_height="40dp"
+            android:gravity = "center"
+            android:background = "@color/table_header"
+            android:text = "Broj osoba"
+            android:textSize = "14sp"
+            />
+
+        <TextView
+            android:id = "@+id/packetDescriptionHeaderTextViewPromoPacketRecycler"
+            android:layout_width="130dp"
+            app:layout_constraintTop_toTopOf="@id/packetNameHeaderTextViewPromoPacketRecycler"
+            app:layout_constraintLeft_toRightOf="@id/packetNumberOfPeopleHeaderTextViewPromoPacketRecycler"
+            android:layout_height="40dp"
+            android:gravity = "center"
+            android:background = "@color/table_header"
+            android:text = "Opis"
+            />
+
+        <TextView
+            android:id = "@+id/buyPacketHeaderPromoPacketRecycler"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            app:layout_constraintLeft_toRightOf="@id/packetDescriptionHeaderTextViewPromoPacketRecycler"
+            android:color = "@color/button_color"
+            app:layout_constraintTop_toTopOf="@id/packetNameHeaderTextViewPromoPacketRecycler"
+            android:gravity = "center_vertical"
+            android:text = "Kupi"
+            android:background = "@color/table_header"
+            />
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id = "@+id/recyclerViewPromoPacketsBuyingTickets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/packetNameHeaderTextViewPromoPacketRecycler"
+            app:layout_constraintLeft_toLeftOf="parent"
+
+            />
+
+        <TextView
+            android:id = "@+id/singleTicketsTextViewBuyingTickets"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:layout_constraintTop_toBottomOf="@id/recyclerViewPromoPacketsBuyingTickets"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="30dp"
+            android:text = "Pojedinacne karte"
+            android:textSize = "32sp"
+            android:textStyle = "bold"
+            android:background = "@color/header_2"
+            android:textColor = "@color/white"
+            android:gravity = "center"
+
+            />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:id = "@+id/singleTicketsNameHeaderTextViewPromoPacketRecycler"
+            android:layout_width="100dp"
+            app:layout_constraintTop_toBottomOf="@id/singleTicketsTextViewBuyingTickets"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_height="40dp"
+            android:gravity = "center"
+            android:text = "Naziv"
+            android:background = "@color/table_header"
+            />
+
+        <TextView
+            android:id = "@+id/singlePacketPriceHeaderTextViewPromoPacketRecycler"
+            android:layout_width="30dp"
+            app:layout_constraintTop_toTopOf="@id/singleTicketsNameHeaderTextViewPromoPacketRecycler"
+            app:layout_constraintLeft_toRightOf="@id/singleTicketsNameHeaderTextViewPromoPacketRecycler"
+            android:layout_height="40dp"
+            android:gravity = "center"
+            android:background = "@color/table_header"
+            android:text = "Cena karte"
+            android:textSize = "13sp"
+            />
+
+        <TextView
+            android:id = "@+id/singleTicketsNumberOfPeopleHeaderTextViewPromoPacketRecycler"
+            android:layout_width="50dp"
+            app:layout_constraintTop_toTopOf="@id/singleTicketsNameHeaderTextViewPromoPacketRecycler"
+            app:layout_constraintLeft_toRightOf="@id/singlePacketPriceHeaderTextViewPromoPacketRecycler"
+            android:layout_height="40dp"
+            android:gravity = "center"
+            android:background = "@color/table_header"
+            android:text = "Broj karata"
+            android:textSize = "14sp"
+            />
+
+        <TextView
+            android:id = "@+id/singleTicketsDescriptionHeaderTextViewPromoPacketRecycler"
+            android:layout_width="130dp"
+            app:layout_constraintTop_toTopOf="@id/singleTicketsNameHeaderTextViewPromoPacketRecycler"
+            app:layout_constraintLeft_toRightOf="@id/singleTicketsNumberOfPeopleHeaderTextViewPromoPacketRecycler"
+            android:layout_height="40dp"
+            android:gravity = "center"
+            android:background = "@color/table_header"
+            android:text = "Ukupna cena"
+            />
+
+        <TextView
+            android:id = "@+id/buySingleTicketHeaderPromoPacketRecycler"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            app:layout_constraintLeft_toRightOf="@id/singleTicketsDescriptionHeaderTextViewPromoPacketRecycler"
+            android:color = "@color/button_color"
+            app:layout_constraintTop_toTopOf="@id/singleTicketsNameHeaderTextViewPromoPacketRecycler"
+            android:gravity = "center_vertical"
+            android:text = "Kupi"
+            android:background = "@color/table_header"
+            />
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id = "@+id/recyclerViewSingleTicketsBuyingTickets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/singleTicketsNameHeaderTextViewPromoPacketRecycler"
+            app:layout_constraintLeft_toLeftOf="parent"
+
+            />
+        <TextView
+            android:id="@+id/promoCodeTextViewBuyingTickets"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Promo kod*:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/recyclerViewSingleTicketsBuyingTickets" />
+
+        <EditText
+            android:id = "@+id/promoCodeEditTextBuyingTickets"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+
+            app:layout_constraintTop_toBottomOf="@id/promoCodeTextViewBuyingTickets"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background = "@color/white"
+
+            >
+
+
+        </EditText>
+
+
+
+        <TextView
+            android:id = "@+id/promoCodeInstructionTextViewBuyingTickets"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+
+            android:textSize = "15sp"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/promoCodeEditTextBuyingTickets"
+
+            android:text = "* uneti promo kod pre kupovine karata."
+            />
+
+        <TextView
+            android:id = "@+id/errorTextViewBuyingTickets"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+
+            android:textSize = "20sp"
+            android:textStyle = "bold"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/promoCodeInstructionTextViewBuyingTickets"
+
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+

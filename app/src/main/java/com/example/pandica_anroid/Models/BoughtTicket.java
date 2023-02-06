@@ -16,7 +16,7 @@ public class BoughtTicket {
     private int userId;
     private String name;
     private int numberOfPeople;
-    private float totalPrice;
+    private int totalPrice;
     private int status; //0 - on wait, 1 - approved, 2 - denied, 3 - canceled
     private Date date;
     private boolean isPromoPacket;
@@ -24,7 +24,7 @@ public class BoughtTicket {
     private String promoCodeName;
     private int promoCodeDiscount;
 
-    public BoughtTicket(int number, int userId, String name, int numberOfPeople, float totalPrice, int status, Date date, boolean isPromoPacket, int promoCodeId, String promoCodeName, int promoCodeDiscount) {
+    public BoughtTicket(int number, int userId, String name, int numberOfPeople, int totalPrice, int status, Date date, boolean isPromoPacket, int promoCodeId, String promoCodeName, int promoCodeDiscount) {
         Number = number;
         this.userId = userId;
         this.name = name;
@@ -70,11 +70,11 @@ public class BoughtTicket {
         this.numberOfPeople = numberOfPeople;
     }
 
-    public float getTotalPrice() {
+    public int getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(float totalPrice) {
+    public void setTotalPrice(int totalPrice) {
         this.totalPrice = totalPrice;
     }
 
