@@ -13,10 +13,23 @@
 
 
     <color name="button_color">#CBD9842F</color>
+    <color name="disabled_button">#C9D9D9D9</color>
+
     <color name="table_header">#5CC542</color>
     <color name="table_content">#73FF50</color>
+
     <color name="header_2">#874402</color>
     <color name="header_1">#CD6700</color>
+
+    <color name="bought_ticket_name">#FFB950</color>
+
+    <color name="status_ticket_on_wait">#FFED50</color>
+    <color name="status_ticket_declined">#E26D2B</color>
+    <color name="status_ticket_accepted">#50FFFF</color>
+
+
+
+
 
 
 

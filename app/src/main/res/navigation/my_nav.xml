@@ -44,5 +44,201 @@
     <fragment
         android:id="@+id/buyingTicketsFragment"
         android:name="com.example.pandica_anroid.BuyingTicketsFragment"
-        android:label="BuyingTicketsFragment" />
+        android:label="BuyingTicketsFragment" >
+        <action
+            android:id="@+id/action_buyingTicketsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_buyingTicketsFragment_to_boughtTicketsFragment"
+            app:destination="@id/boughtTicketsFragment" />
+        <action
+            android:id="@+id/action_buyingTicketsFragment_to_eventsFragment"
+            app:destination="@id/eventsFragment" />
+        <action
+            android:id="@+id/action_buyingTicketsFragment_to_animalsFragment"
+            app:destination="@id/animalsFragment" />
+        <action
+            android:id="@+id/action_buyingTicketsFragment_to_notificationsFragment"
+            app:destination="@id/notificationsFragment" />
+        <action
+            android:id="@+id/action_buyingTicketsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/boughtTicketsFragment"
+        android:name="com.example.pandica_anroid.BoughtTicketsFragment"
+        android:label="fragment_bought_tickets"
+        tools:layout="@layout/fragment_bought_tickets" >
+        <action
+            android:id="@+id/action_boughtTicketsFragment_to_buyingTicketsFragment"
+            app:destination="@id/buyingTicketsFragment" />
+        <action
+            android:id="@+id/action_boughtTicketsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_boughtTicketsFragment_to_eventsFragment"
+            app:destination="@id/eventsFragment" />
+        <action
+            android:id="@+id/action_boughtTicketsFragment_to_animalsFragment"
+            app:destination="@id/animalsFragment" />
+        <action
+            android:id="@+id/action_boughtTicketsFragment_to_notificationsFragment"
+            app:destination="@id/notificationsFragment" />
+        <action
+            android:id="@+id/action_boughtTicketsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventsFragment"
+        android:name="com.example.pandica_anroid.EventsFragment"
+        android:label="fragment_events"
+        tools:layout="@layout/fragment_events" >
+        <action
+            android:id="@+id/action_eventsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_eventsFragment_to_buyingTicketsFragment"
+            app:destination="@id/buyingTicketsFragment" />
+        <action
+            android:id="@+id/action_eventsFragment_to_boughtTicketsFragment"
+            app:destination="@id/boughtTicketsFragment" />
+        <action
+            android:id="@+id/action_eventsFragment_to_animalsFragment"
+            app:destination="@id/animalsFragment" />
+        <action
+            android:id="@+id/action_eventsFragment_to_notificationsFragment"
+            app:destination="@id/notificationsFragment" />
+        <action
+            android:id="@+id/action_eventsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/animalsFragment"
+        android:name="com.example.pandica_anroid.AnimalsFragment"
+        android:label="fragment_animals"
+        tools:layout="@layout/fragment_animals" >
+        <action
+            android:id="@+id/action_animalsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_animalsFragment_to_buyingTicketsFragment"
+            app:destination="@id/buyingTicketsFragment" />
+        <action
+            android:id="@+id/action_animalsFragment_to_boughtTicketsFragment"
+            app:destination="@id/boughtTicketsFragment" />
+        <action
+            android:id="@+id/action_animalsFragment_to_eventsFragment"
+            app:destination="@id/eventsFragment" />
+        <action
+            android:id="@+id/action_animalsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_animalsFragment_to_notificationsFragment"
+            app:destination="@id/notificationsFragment" />
+        <action
+            android:id="@+id/action_animalsFragment_to_animalDetailsFragment"
+            app:destination="@id/animalDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/animalDetailsFragment"
+        android:name="com.example.pandica_anroid.AnimalDetailsFragment"
+        android:label="fragment_animal_details"
+        tools:layout="@layout/fragment_animal_details" >
+        <action
+            android:id="@+id/action_animalDetailsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_animalDetailsFragment_to_buyingTicketsFragment"
+            app:destination="@id/buyingTicketsFragment" />
+        <action
+            android:id="@+id/action_animalDetailsFragment_to_boughtTicketsFragment"
+            app:destination="@id/boughtTicketsFragment" />
+        <action
+            android:id="@+id/action_animalDetailsFragment_to_eventsFragment"
+            app:destination="@id/eventsFragment" />
+        <action
+            android:id="@+id/action_animalDetailsFragment_to_animalsFragment"
+            app:destination="@id/animalsFragment" />
+        <action
+            android:id="@+id/action_animalDetailsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.example.pandica_anroid.NotificationsFragment"
+        android:label="fragment_notifications"
+        tools:layout="@layout/fragment_notifications" >
+        <action
+            android:id="@+id/action_notificationsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_notificationsFragment_to_boughtTicketsFragment"
+            app:destination="@id/boughtTicketsFragment" />
+        <action
+            android:id="@+id/action_notificationsFragment_to_buyingTicketsFragment"
+            app:destination="@id/buyingTicketsFragment" />
+        <action
+            android:id="@+id/action_notificationsFragment_to_eventsFragment"
+            app:destination="@id/eventsFragment" />
+        <action
+            android:id="@+id/action_notificationsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_notificationsFragment_to_animalsFragment"
+            app:destination="@id/animalsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.pandica_anroid.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_changeUserDetailsFragment"
+            app:destination="@id/changeUserDetailsFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_buyingTicketsFragment"
+            app:destination="@id/buyingTicketsFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_boughtTicketsFragment"
+            app:destination="@id/boughtTicketsFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_notificationsFragment"
+            app:destination="@id/notificationsFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_animalsFragment"
+            app:destination="@id/animalsFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_eventsFragment"
+            app:destination="@id/eventsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeUserDetailsFragment"
+        android:name="com.example.pandica_anroid.ChangeUserDetailsFragment"
+        android:label="fragment_change_user_details"
+        tools:layout="@layout/fragment_change_user_details" >
+        <action
+            android:id="@+id/action_changeUserDetailsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_changeUserDetailsFragment_to_buyingTicketsFragment"
+            app:destination="@id/buyingTicketsFragment" />
+        <action
+            android:id="@+id/action_changeUserDetailsFragment_to_boughtTicketsFragment"
+            app:destination="@id/boughtTicketsFragment" />
+        <action
+            android:id="@+id/action_changeUserDetailsFragment_to_eventsFragment"
+            app:destination="@id/eventsFragment" />
+        <action
+            android:id="@+id/action_changeUserDetailsFragment_to_animalsFragment"
+            app:destination="@id/animalsFragment" />
+        <action
+            android:id="@+id/action_changeUserDetailsFragment_to_notificationsFragment"
+            app:destination="@id/notificationsFragment" />
+        <action
+            android:id="@+id/action_changeUserDetailsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
 </navigation>

@@ -7,6 +7,7 @@ import java.util.List;
 public class User {
 
     public static List<User> users;
+    public static User currentUser = null;
 
     static {
         users = new LinkedList<>();
@@ -55,6 +56,8 @@ public class User {
     public static boolean loginCredentialsGood(String username, String password){
         for(User e: users){
             if(e.username.equals(username) && e.password.equals(password) && e.userType.equals("user"))
+                currentUser = e;
+                BoughtTicket.initUserBoughtTickets(e.id);
                 return true;
         }
         return false;
