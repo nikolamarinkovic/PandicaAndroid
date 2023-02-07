@@ -17,12 +17,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.pandica_anroid.Adapters.RecyclerAdapterBoughtTicketsBoughtTickets;
-import com.example.pandica_anroid.Adapters.RecyclerAdapterPromoPackagesBuyingTickets;
-import com.example.pandica_anroid.Adapters.RecyclerAdapterSingleTicketsBuyingTickets;
+import com.example.pandica_anroid.Adapters.RecyclerAdapterBoughtTickets;
 import com.example.pandica_anroid.Models.BoughtTicket;
-import com.example.pandica_anroid.Models.Packet;
-import com.example.pandica_anroid.Models.SinglePacket;
 
 public class BoughtTicketsFragment extends Fragment {
 
@@ -46,7 +42,7 @@ public class BoughtTicketsFragment extends Fragment {
         RecyclerView recyclerViewPromoPackets = view.findViewById(R.id.recyclerViewBoughtTickets);
 
         recyclerViewPromoPackets.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerViewPromoPackets.setAdapter(new RecyclerAdapterBoughtTicketsBoughtTickets( BoughtTicket.userBoughtTickets, getContext()));
+        recyclerViewPromoPackets.setAdapter(new RecyclerAdapterBoughtTickets( BoughtTicket.userBoughtTickets, getContext()));
 
 
 
@@ -63,24 +59,26 @@ public class BoughtTicketsFragment extends Fragment {
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
 
         switch (item.getItemId()){
+            case R.id.mainMenuBuyingTickets:
+                Navigation.findNavController(getView()).navigate(R.id.action_boughtTicketsFragment_to_buyingTicketsFragment);
+                return true;
             case R.id.mainMenuBoughtTickets:
-                Navigation.findNavController(getView()).navigate(R.id.action_buyingTicketsFragment_to_boughtTicketsFragment);
                 return true;
             case R.id.mainMenuEvents:
-                Navigation.findNavController(getView()).navigate(R.id.action_buyingTicketsFragment_to_eventsFragment);
+                Navigation.findNavController(getView()).navigate(R.id.action_boughtTicketsFragment_to_eventsFragment);
                 return true;
             case R.id.mainMenuAnimals:
-                Navigation.findNavController(getView()).navigate(R.id.action_buyingTicketsFragment_to_animalsFragment);
+                Navigation.findNavController(getView()).navigate(R.id.action_boughtTicketsFragment_to_animalsFragment);
                 return true;
             case R.id.mainMenuNotifications:
-                Navigation.findNavController(getView()).navigate(R.id.action_buyingTicketsFragment_to_notificationsFragment);
+                Navigation.findNavController(getView()).navigate(R.id.action_boughtTicketsFragment_to_notificationsFragment);
                 return true;
             case R.id.mainMenuProfile:
-                Navigation.findNavController(getView()).navigate(R.id.action_buyingTicketsFragment_to_profileFragment);
+                Navigation.findNavController(getView()).navigate(R.id.action_boughtTicketsFragment_to_profileFragment);
                 return true;
 
             case R.id.mainMenulogout:
-                Navigation.findNavController(getView()).navigate(R.id.action_buyingTicketsFragment_to_homeFragment);
+                Navigation.findNavController(getView()).navigate(R.id.action_boughtTicketsFragment_to_homeFragment);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

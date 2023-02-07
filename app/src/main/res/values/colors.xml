@@ -27,6 +27,11 @@
     <color name="status_ticket_declined">#E26D2B</color>
     <color name="status_ticket_accepted">#50FFFF</color>
 
+    <color name="event_name">#F8C25A</color>
+    <color name="event_description">#F1DD96</color>
+
+
+
 
 
 

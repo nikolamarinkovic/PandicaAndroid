@@ -68,6 +68,9 @@ public class BuyingTicketsFragment extends Fragment {
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
 
         switch (item.getItemId()){
+            case R.id.mainMenuBuyingTickets:
+
+                return true;
             case R.id.mainMenuBoughtTickets:
                 Navigation.findNavController(getView()).navigate(R.id.action_buyingTicketsFragment_to_boughtTicketsFragment);
                 return true;

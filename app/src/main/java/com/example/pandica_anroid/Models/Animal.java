@@ -23,25 +23,26 @@ public class Animal {
 
     }
 
-    public Animal(int id, String name, String description, List<Comment> comments, int image) {
+    public Animal(int id, String name, String description, List<Comment> comments, int imageResource) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.comments = comments;
+        this.imageResource = imageResource;
     }
 
     private int id;
     private String name;
     private String description;
     private List<Comment> comments;
-    private int image;
+    private int imageResource;
 
     public int getImage() {
-        return image;
+        return imageResource;
     }
 
-    public void setImage(int image) {
-        this.image = image;
+    public void setImage(int imageResource) {
+        this.imageResource = imageResource;
     }
 
     public int getId() {

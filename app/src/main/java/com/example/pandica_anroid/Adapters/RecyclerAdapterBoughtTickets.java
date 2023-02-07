@@ -4,20 +4,18 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pandica_anroid.Models.BoughtTicket;
-import com.example.pandica_anroid.Models.SinglePacket;
 import com.example.pandica_anroid.R;
 
 import java.util.Date;
 import java.util.List;
 
-public class RecyclerAdapterBoughtTicketsBoughtTickets extends RecyclerView.Adapter<RecyclerAdapterBoughtTicketsBoughtTickets.MyViewHolder>{
+public class RecyclerAdapterBoughtTickets extends RecyclerView.Adapter<RecyclerAdapterBoughtTickets.MyViewHolder>{
 
     private List<BoughtTicket> boughtTickets;
     Context context;
@@ -38,7 +36,7 @@ public class RecyclerAdapterBoughtTicketsBoughtTickets extends RecyclerView.Adap
         this.context = context;
     }
 
-    public RecyclerAdapterBoughtTicketsBoughtTickets(List<BoughtTicket> boughtTickets, Context context) {
+    public RecyclerAdapterBoughtTickets(List<BoughtTicket> boughtTickets, Context context) {
         this.boughtTickets = boughtTickets;
         this.context = context;
     }
@@ -65,13 +63,13 @@ public class RecyclerAdapterBoughtTicketsBoughtTickets extends RecyclerView.Adap
 
     @NonNull
     @Override
-    public RecyclerAdapterBoughtTicketsBoughtTickets.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerAdapterBoughtTickets.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(context).inflate(R.layout.bought_tickets,parent, false);
-        return new RecyclerAdapterBoughtTicketsBoughtTickets.MyViewHolder(itemView);
+        return new RecyclerAdapterBoughtTickets.MyViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerAdapterBoughtTicketsBoughtTickets.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerAdapterBoughtTickets.MyViewHolder holder, int position) {
         BoughtTicket boughtTicket = boughtTickets.get(position);
 
         String name = boughtTicket.getName();

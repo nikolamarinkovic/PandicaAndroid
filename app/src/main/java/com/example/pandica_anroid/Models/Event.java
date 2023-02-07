@@ -1,5 +1,7 @@
 package com.example.pandica_anroid.Models;
 
+import com.example.pandica_anroid.R;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -9,18 +11,31 @@ public class Event {
 
     static {
         events = new LinkedList<>();
+
+        Event e = new Event(0, "Pandica Jovan dosao", "Doso pandica jovan", new LinkedList<>(), R.drawable.event_0);
+        events.add(e);
     }
 
     private int id;
     private String name;
     private String description;
-    private List<Number> userIdsLiked;
+    private List<Integer> userIdsLiked;
+    private int imageResource;
 
-    public Event(int id, String name, String description, List<Number> userIdsLiked) {
+    public Event(int id, String name, String description, List<Integer> userIdsLiked, int imageResource) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.userIdsLiked = userIdsLiked;
+        this.imageResource = imageResource;
+    }
+
+    public int getImageResource() {
+        return imageResource;
+    }
+
+    public void setImageResource(int imageResource) {
+        this.imageResource = imageResource;
     }
 
     public int getId() {
@@ -47,11 +62,11 @@ public class Event {
         this.description = description;
     }
 
-    public List<Number> getUserIdsLiked() {
+    public List<Integer> getUserIdsLiked() {
         return userIdsLiked;
     }
 
-    public void setUserIdsLiked(List<Number> userIdsLiked) {
+    public void setUserIdsLiked(List<Integer> userIdsLiked) {
         this.userIdsLiked = userIdsLiked;
     }
 }

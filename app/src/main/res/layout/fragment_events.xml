@@ -1,14 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EventsFragment">
+    android:background="@color/color_background"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_width="match_parent"
+        >
 
-</FrameLayout>
+
+        <TextView
+            android:id = "@+id/eventsTextViewEvents"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="30dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text = "Desavanja"
+            android:textSize = "32sp"
+            android:textStyle = "bold"
+            android:background = "@color/header_1"
+            android:textColor = "@color/white"
+            android:gravity = "center"
+
+            />
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="20dp"
+            android:id = "@+id/recyclerViewEvents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/eventsTextViewEvents"
+            app:layout_constraintLeft_toLeftOf="parent"
+
+            />
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
