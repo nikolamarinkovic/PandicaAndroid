@@ -186,6 +186,9 @@
         <action
             android:id="@+id/action_notificationsFragment_to_animalsFragment"
             app:destination="@id/animalsFragment" />
+        <action
+            android:id="@+id/action_notificationsFragment_self"
+            app:destination="@id/notificationsFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"

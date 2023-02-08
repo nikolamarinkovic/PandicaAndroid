@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Fax/Master/PKI/Projekat/Android/PandicaAndroid/app/src/main/res/layout/activity_main.xml" value="0.10572916666666667" />
+        <entry key="..\:/Fax/Master/PKI/Projekat/Android/PandicaAndroid/app/src/main/res/layout/animal.xml" value="0.1046875" />
         <entry key="..\:/Fax/Master/PKI/Projekat/Android/PandicaAndroid/app/src/main/res/layout/bought_tickets.xml" value="0.19444444444444445" />
         <entry key="..\:/Fax/Master/PKI/Projekat/Android/PandicaAndroid/app/src/main/res/layout/event.xml" value="0.10572916666666667" />
         <entry key="..\:/Fax/Master/PKI/Projekat/Android/PandicaAndroid/app/src/main/res/layout/fragment_animals.xml" value="0.10572916666666667" />
@@ -12,7 +13,10 @@
         <entry key="..\:/Fax/Master/PKI/Projekat/Android/PandicaAndroid/app/src/main/res/layout/fragment_events.xml" value="0.10572916666666667" />
         <entry key="..\:/Fax/Master/PKI/Projekat/Android/PandicaAndroid/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/Fax/Master/PKI/Projekat/Android/PandicaAndroid/app/src/main/res/layout/fragment_login.xml" value="0.1" />
+        <entry key="..\:/Fax/Master/PKI/Projekat/Android/PandicaAndroid/app/src/main/res/layout/fragment_notifications.xml" value="0.176" />
+        <entry key="..\:/Fax/Master/PKI/Projekat/Android/PandicaAndroid/app/src/main/res/layout/fragment_profile.xml" value="0.17552083333333332" />
         <entry key="..\:/Fax/Master/PKI/Projekat/Android/PandicaAndroid/app/src/main/res/layout/fragment_register.xml" value="0.1" />
+        <entry key="..\:/Fax/Master/PKI/Projekat/Android/PandicaAndroid/app/src/main/res/layout/notification.xml" value="0.2" />
         <entry key="..\:/Fax/Master/PKI/Projekat/Android/PandicaAndroid/app/src/main/res/layout/promo_packets.xml" value="0.10572916666666667" />
         <entry key="..\:/Fax/Master/PKI/Projekat/Android/PandicaAndroid/app/src/main/res/layout/single_packets.xml" value="0.15520833333333334" />
         <entry key="..\:/Fax/Master/PKI/Projekat/Android/PandicaAndroid/app/src/main/res/menu/main_menu.xml" value="0.11296296296296296" />

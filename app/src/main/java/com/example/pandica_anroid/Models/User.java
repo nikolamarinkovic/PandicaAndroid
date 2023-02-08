@@ -13,6 +13,9 @@ public class User {
         users = new LinkedList<>();
 
         User userPera = new User( "pera","pera", "user", "Perica", "Peric", "555-333", "Pere Velimirovica 35c");
+        Notification n = new Notification(1,"test", new Date(2022,10,10,15,20));
+        userPera.getNotifications().add(n);
+
         User userMika = new User("mika","mika", "user", "Perica", "Peric", "555-333", "Pere Velimirovica 35c");
 
         users.add(userPera);

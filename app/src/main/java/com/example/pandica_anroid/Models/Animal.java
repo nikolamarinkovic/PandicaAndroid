@@ -1,5 +1,7 @@
 package com.example.pandica_anroid.Models;
 
+import com.example.pandica_anroid.R;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -10,13 +12,15 @@ public class Animal {
     static {
         animals = new LinkedList<>();
         //TODO: prepraviti ovo
-        Animal a = new Animal(1,"Zirafa pera", "Zirafa pera", new LinkedList<>(),5);
+        Animal a = new Animal(0,"Zirafa pera", "Zirafa pera", new LinkedList<>(), R.drawable.animal_0);
         //Comment c1 = new Comment()
         //a.comments.add()
-        Animal b = new Animal(2, "Pingvin zika", "Pingvin zika", new LinkedList<>(),6);
+        Animal b = new Animal(1, "Pingvin zika", "Pingvin zika", new LinkedList<>(),R.drawable.event_0);
+        Animal c = new Animal(1, "Pingvin zika", "Pingvin zika", new LinkedList<>(),R.drawable.event_0);
 
         animals.add(a);
         animals.add(b);
+        animals.add(c);
     }
 
     public Animal(){

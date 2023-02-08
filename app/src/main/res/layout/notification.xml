@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <TextView
+        android:id="@+id/notificationTimeTextViewNotificationRecycler"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:background="@color/table_content"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:textSize = "15sp"
+        android:textStyle = "bold"
+        />
+
+    <TextView
+        android:id = "@+id/notificationDescriptionTextViewNotificationRecycler"
+        android:layout_width="170dp"
+        app:layout_constraintTop_toTopOf="@id/notificationTimeTextViewNotificationRecycler"
+        app:layout_constraintLeft_toRightOf="@id/notificationTimeTextViewNotificationRecycler"
+        android:layout_height="40dp"
+        android:gravity = "center"
+        android:background = "@color/table_content"
+        android:textSize = "17sp"
+        android:textStyle = "bold"
+        />
+
+
+    <LinearLayout
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:background = "@color/table_content"
+        app:layout_constraintLeft_toRightOf="@id/notificationDescriptionTextViewNotificationRecycler"
+        app:layout_constraintTop_toTopOf="@id/notificationTimeTextViewNotificationRecycler"
+        >
+
+        <TextView
+            android:id = "@+id/deleteNotificationTextViewRecyclerViewNotifications"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+
+
+
+            android:background = "@color/button_red"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:gravity = "center"
+            android:text = "Izbrisi"
+
+            />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
