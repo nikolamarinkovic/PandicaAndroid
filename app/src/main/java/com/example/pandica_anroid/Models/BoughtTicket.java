@@ -26,6 +26,140 @@ public class BoughtTicket {
         boughtTickets.add(c1);
     }
 
+    public static void cancelTicket(int ticketId){
+        for(BoughtTicket ticket: BoughtTicket.boughtTickets){
+            if(ticket.id == ticketId){
+                ticket.status = 3;
+                initUserBoughtTickets(User.currentUser.getId());
+                return;
+            }
+        }
+    }
+
+    public static String buyPacket(int packetId, String promoCode, boolean force){ // force flag is for when a user enters promo code buy cant use it
+
+        Packet packet = null;
+        for(Packet p : Packet.packets){
+            if(p.getId() == packetId){
+                packet = p;
+                break;
+            }
+        }
+        if(packet == null){
+            return "Greska";
+        }
+
+        int promoCodeDiscount = 0;
+        int promoCodeId = -1;
+        String promoCodeName = "";
+        PromoCode code = null;
+
+        if(promoCode.length() > 0 && force == false){
+            for(PromoCode p : PromoCode.promoCodes){
+                if(p.getName().equals(promoCode)){
+                    code = p;
+                    break;
+                }
+            }
+
+            if(code == null){
+                return " Promo kod ne postoji."; // the extra space at start is for the recycler to parse
+            }
+            if(code.getNumberLeft() <= 0){
+                return " Promo kod istekao.";
+            }
+            for( int usedCode : User.currentUser.getUsedPromoCodes()){
+                if(usedCode == code.getId()){
+                    return " Iskoristili ste kod.";
+                }
+            }
+
+            promoCodeId=code.getId();
+            promoCodeName=code.getName();
+            promoCodeDiscount = code.getDiscount();
+
+            code.setNumberLeft(code.getNumberLeft() - 1);
+
+            User.currentUser.getUsedPromoCodes().add(code.getId());
+
+        }
+
+        int newId = 0;
+        for(BoughtTicket t: boughtTickets){
+            if(t.getId() >= newId)
+                newId = t.getId() + 1;
+        }
+
+        int totalPrice = (int) (Math.floor((packet.getPrice() * 1.0 * (100-promoCodeDiscount))/100));
+
+        BoughtTicket boughtTicket = new BoughtTicket(newId, User.currentUser.getId(), packet.getName(), packet.getNumberOfPeople(), totalPrice, 0, new Date(), true, promoCodeId, promoCodeName,promoCodeDiscount);
+        BoughtTicket.boughtTickets.add(boughtTicket);
+        BoughtTicket.initUserBoughtTickets(User.currentUser.getId());
+        return "Uspesno kupljeno";
+    }
+
+    public static String buySinglePacket(int singlePacketId, int numberOfPeople, String promoCode, boolean force){ // force flag is for when a user enters promo code buy cant use it
+
+        SinglePacket singlePacket = null;
+        for(SinglePacket s : SinglePacket.singlePackets){
+            if(s.getId() == singlePacketId){
+                singlePacket = s;
+                break;
+            }
+        }
+        if(singlePacket == null){
+            return "Greska";
+        }
+
+        int promoCodeDiscount = 0;
+        int promoCodeId = -1;
+        String promoCodeName = "";
+        PromoCode code = null;
+
+        if(promoCode.length() > 0 && force == false){
+            for(PromoCode p : PromoCode.promoCodes){
+                if(p.getName().equals(promoCode)){
+                    code = p;
+                    break;
+                }
+            }
+
+            if(code == null){
+                return " Promo kod ne postoji."; // the extra space at start is for the recycler to parse
+            }
+            if(code.getNumberLeft() <= 0){
+                return " Promo kod istekao.";
+            }
+            for( int usedCode : User.currentUser.getUsedPromoCodes()){
+                if(usedCode == code.getId()){
+                    return " Iskoristili ste kod.";
+                }
+            }
+
+            promoCodeId=code.getId();
+            promoCodeName=code.getName();
+            promoCodeDiscount = code.getDiscount();
+
+            code.setNumberLeft(code.getNumberLeft() - 1);
+
+            User.currentUser.getUsedPromoCodes().add(code.getId());
+
+        }
+
+        int newId = 0;
+        for(BoughtTicket t: boughtTickets){
+            if(t.getId() >= newId)
+                newId = t.getId() + 1;
+        }
+
+        int totalPrice = (int) (Math.floor((singlePacket.getPricePerPerson() * numberOfPeople * 1.0 * (100-promoCodeDiscount))/100));
+
+        BoughtTicket boughtTicket = new BoughtTicket(newId, User.currentUser.getId(), singlePacket.getName(), numberOfPeople, totalPrice, 0, new Date(), false, promoCodeId, promoCodeName,promoCodeDiscount);
+        BoughtTicket.boughtTickets.add(boughtTicket);
+        BoughtTicket.initUserBoughtTickets(User.currentUser.getId());
+        return "Uspesno kupljeno";
+    }
+
     public static void initUserBoughtTickets(int userId){
         userBoughtTickets.clear();
         for(int i = 0; i < boughtTickets.size(); i++){

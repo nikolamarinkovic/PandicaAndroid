@@ -17,9 +17,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.example.pandica_anroid.Adapters.RecyclerAdapterPromoPackagesBuyingTickets;
 import com.example.pandica_anroid.Adapters.RecyclerAdapterSingleTicketsBuyingTickets;
+import com.example.pandica_anroid.Models.BoughtTicket;
 import com.example.pandica_anroid.Models.Packet;
 import com.example.pandica_anroid.Models.SinglePacket;
 
@@ -27,6 +29,7 @@ import java.util.List;
 
 public class BuyingTicketsFragment extends Fragment {
 
+    public static EditText promoCode;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,6 +58,7 @@ public class BuyingTicketsFragment extends Fragment {
         recyclerViewSingleTickets.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerViewSingleTickets.setAdapter(new RecyclerAdapterSingleTicketsBuyingTickets( SinglePacket.singlePackets, getContext()));
 
+        BuyingTicketsFragment.promoCode = getActivity().findViewById(R.id.promoCodeEditTextBuyingTickets);
     }
 
     @Override

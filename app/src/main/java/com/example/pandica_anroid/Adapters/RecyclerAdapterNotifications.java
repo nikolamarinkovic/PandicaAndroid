@@ -9,10 +9,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pandica_anroid.Models.Animal;
 import com.example.pandica_anroid.Models.Notification;
+import com.example.pandica_anroid.Models.User;
 import com.example.pandica_anroid.R;
 
 import java.util.Date;
@@ -48,9 +50,11 @@ public class RecyclerAdapterNotifications extends RecyclerView.Adapter<RecyclerA
         private TextView time;
         private TextView description;
         private TextView deleteButton;
+        private View myView;
 
         public MyViewHolder(@NonNull View view){
             super(view);
+            myView = view;
             time = view.findViewById(R.id.notificationTimeTextViewNotificationRecycler);
             description = view.findViewById(R.id.notificationDescriptionTextViewNotificationRecycler);
             deleteButton = view.findViewById(R.id.deleteNotificationTextViewRecyclerViewNotifications);
@@ -70,13 +74,15 @@ public class RecyclerAdapterNotifications extends RecyclerView.Adapter<RecyclerA
 
         Date date = notif.getTime();
         String description = notif.getContent();
-        int id = notif.getId();
+        int notifId = notif.getId();
 
         holder.time.setText("" + date.getDate() + "." + date.getMonth() + "." + date.getYear() + "\n" + date.getHours() + ":" + date.getMinutes());
         holder.description.setText(description);
 
         holder.deleteButton.setOnClickListener((view) -> {
-            //TODO: add delete notif
+            User.deleteNotificationFromCurrentUser(notifId);
+            Navigation.findNavController(holder.myView).navigate(R.id.action_notificationsFragment_self);
+
         });
 
     }

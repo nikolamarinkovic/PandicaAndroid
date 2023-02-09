@@ -1,6 +1,9 @@
 package com.example.pandica_anroid.Adapters;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -78,7 +81,7 @@ public class RecyclerAdapterEvents extends RecyclerView.Adapter<RecyclerAdapterE
                 likeImageResource = R.drawable.liked;
         }
 
-        int id = event.getId();
+        int eventId = event.getId();
 
         holder.name.setText(name);
         holder.image.setImageDrawable(context.getDrawable(imageResource));
@@ -87,7 +90,23 @@ public class RecyclerAdapterEvents extends RecyclerView.Adapter<RecyclerAdapterE
         holder.numberOfLikes.setText("" + numberOfLikes);
 
         holder.likeImage.setOnClickListener((view) -> {
-            //TODO: implement buying tickets
+            Event.currentUserLikeEvent(eventId);
+            Drawable d = holder.likeImage.getDrawable();
+
+            Bitmap b1 = ((BitmapDrawable) d).getBitmap();
+            Bitmap b2 = ((BitmapDrawable) context.getDrawable(R.drawable.not_liked)).getBitmap();
+
+            if(b1.equals(b2)){
+                holder.likeImage.setImageDrawable(context.getDrawable(R.drawable.liked));
+                int numOfLikes = Integer.parseInt(holder.numberOfLikes.getText().toString());
+                holder.numberOfLikes.setText( numOfLikes + 1 + "");
+            }
+            else{
+                holder.likeImage.setImageDrawable(context.getDrawable(R.drawable.not_liked));
+                int numOfLikes = Integer.parseInt(holder.numberOfLikes.getText().toString());
+                holder.numberOfLikes.setText( numOfLikes - 1 + "");
+            }
+
         });
     }
 

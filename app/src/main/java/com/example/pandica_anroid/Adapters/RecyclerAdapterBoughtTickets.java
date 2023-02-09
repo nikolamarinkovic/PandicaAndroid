@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pandica_anroid.Models.BoughtTicket;
@@ -48,9 +49,12 @@ public class RecyclerAdapterBoughtTickets extends RecyclerView.Adapter<RecyclerA
         private TextView status;
         private TextView date;
         private TextView cancelTextView;
+        private View view;
 
         public MyViewHolder(@NonNull View view){
             super(view);
+
+            this.view = view;
             name = view.findViewById(R.id.boughtTicketNameTextViewRecyclerViewBoughtTicket);
             numberOfPeople = view.findViewById(R.id.boughtTicketNumberOfPeopleTextViewRecyclerViewBoughtTicket);
             totalPrice = view.findViewById(R.id.boughtTicketPriceTextViewRecyclerViewBoughtTicket);
@@ -87,7 +91,8 @@ public class RecyclerAdapterBoughtTickets extends RecyclerView.Adapter<RecyclerA
             status = "Na cekanju";
             holder.status.setBackgroundResource(R.color.status_ticket_on_wait);
             holder.cancelTextView.setOnClickListener((view) -> {
-                //TODO: implement canceling tickets
+                BoughtTicket.cancelTicket(boughtTicket.getId());
+                Navigation.findNavController(holder.view).navigate(R.id.action_boughtTicketsFragment_self);
             });
         } else if (statusInt == 1) {
             status = "Odobreno";

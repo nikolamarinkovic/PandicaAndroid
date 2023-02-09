@@ -56,6 +56,67 @@ public class User {
         this.usedPromoCodes = new LinkedList<>();
     }
 
+    public static String changeUserData(String oldUsername, String newUsername, String newFirstName, String newLastname, String newPhoneNumber, String newAddress, String oldPassword, String newPassword, String newPasswordConfirmed){
+
+        boolean oldUsernameFound = false;
+        boolean newUserNameFound = false;
+        User user = null;
+        for(User u: User.users){
+            if(u.username.equals(oldUsername)) {
+                oldUsernameFound = true;
+                user = u;
+            }
+            if(u.username.equals(newUsername) && !newUsername.equals(oldUsername) )
+                newUserNameFound = true;
+        }
+        if(oldUsernameFound == false){
+            return "Greska.";
+        }
+        if(newUserNameFound == true)
+            return "Novo koriscnicko ime postoji.";
+
+        if(oldPassword.length() > 0){
+            if(!user.getPassword().equals(oldPassword)){
+                return "Stara lozinka nije dobra.";
+            }
+            if(newPassword.length() == 0){
+                return "Nova lozinka prazna.";
+            }
+            if(newPasswordConfirmed.length() == 0)
+                return "Potvrda lozinke prazna.";
+            if(!newPassword.equals(newPasswordConfirmed))
+                return "Potvrda lozinke nije dobra.";
+
+            user.setPassword(newPassword);
+        }
+
+        user.setUsername(newUsername);
+        user.setFirstName(newFirstName);
+        user.setLastName(newLastname);
+        user.setPhoneNumber(newPhoneNumber);
+        user.setAddress(newAddress);
+
+
+        return "OK";
+    }
+
+    public static void deleteNotificationFromCurrentUser(int notifId){
+        int index = 0;
+        boolean found = false;
+        for(Notification notif: User.currentUser.getNotifications()){
+            if(notif.getId() == notifId){
+                found = true;
+                break;
+            }
+            index++;
+        }
+        if(found == false)
+            return;
+        User.currentUser.getNotifications().remove(index);
+        return;
+
+    }
+
     public static boolean loginCredentialsGood(String username, String password){
         for(User e: users){
             if(e.username.equals(username) && e.password.equals(password) && e.userType.equals("user"))

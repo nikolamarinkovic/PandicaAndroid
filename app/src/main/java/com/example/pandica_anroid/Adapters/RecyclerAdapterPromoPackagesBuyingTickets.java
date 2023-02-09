@@ -12,6 +12,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.pandica_anroid.BuyingTicketsFragment;
+import com.example.pandica_anroid.Models.BoughtTicket;
 import com.example.pandica_anroid.Models.Packet;
 import com.example.pandica_anroid.R;
 
@@ -76,7 +78,13 @@ public class RecyclerAdapterPromoPackagesBuyingTickets extends RecyclerView.Adap
         holder.description.setText(description);
 
         holder.buyTextView.setOnClickListener((view) -> {
-            //TODO: implement buying tickets
+            String resp = BoughtTicket.buyPacket(packet.getId(), BuyingTicketsFragment.promoCode.getText().toString(), false);
+            if(resp.charAt(0) == ' '){ // need a popup window
+
+            }
+            Toast.makeText(context, resp, Toast.LENGTH_LONG).show();
+
+
         });
     }
 

@@ -16,6 +16,27 @@ public class Event {
         events.add(e);
     }
 
+    public static void currentUserLikeEvent(int eventId){
+        for(Event e : Event.events){
+            if(e.id == eventId){
+                List<Integer> userIds = e.getUserIdsLiked();
+                int i = 0;
+                boolean found = false;
+                for(int id: userIds){
+                    if(id == User.currentUser.getId()) {
+                        userIds.remove(i);
+                        found = true;
+                        break;
+                    }
+                }
+                if(found == false){
+                    userIds.add(User.currentUser.getId());
+                }
+                break;
+            }
+        }
+    }
+
     private int id;
     private String name;
     private String description;

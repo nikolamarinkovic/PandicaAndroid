@@ -6,10 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.pandica_anroid.BuyingTicketsFragment;
+import com.example.pandica_anroid.Models.BoughtTicket;
 import com.example.pandica_anroid.Models.Packet;
 import com.example.pandica_anroid.Models.SinglePacket;
 import com.example.pandica_anroid.R;
@@ -84,7 +87,25 @@ public class RecyclerAdapterSingleTicketsBuyingTickets extends RecyclerView.Adap
         holder.totalPrice.setText("" + totalPrice);
 
         holder.buyTextView.setOnClickListener((view) -> {
-            //TODO: implement buying tickets
+
+            if(holder.numberOfPeople.getText().toString().length() == 0){
+                Toast.makeText(context, "Unesite broj osoba.", Toast.LENGTH_LONG).show();
+                return;
+            }
+            int numberOfPeople = Integer.parseInt( holder.numberOfPeople.getText().toString());
+            if(numberOfPeople <= 0){
+                Toast.makeText(context, "Broj ljudi mora biti pozitivan.", Toast.LENGTH_LONG).show();
+                return;
+            }
+
+
+
+            String resp = BoughtTicket.buySinglePacket(singlePacket.getId(), numberOfPeople,BuyingTicketsFragment.promoCode.getText().toString(), false);
+            if(resp.charAt(0) == ' '){ // need a popup window
+                //
+            }
+            Toast.makeText(context, resp, Toast.LENGTH_LONG).show();
+
         });
     }
 

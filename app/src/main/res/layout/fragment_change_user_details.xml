@@ -1,14 +1,303 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ChangeUserDetailsFragment">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_width="match_parent"
+        android:background="@color/color_background"
 
-</FrameLayout>
+        >
+
+
+        <TextView
+            android:id = "@+id/changeUserDetailsTextViewChangeUserDetails"
+            android:layout_width="320dp"
+            android:layout_height="60dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="40dp"
+            android:text = "Izmena podataka profila"
+            android:textSize = "27sp"
+            android:textStyle = "bold"
+            android:background = "@color/header_1"
+            android:textColor = "@color/white"
+            android:gravity = "center"
+
+            />
+
+        <TextView
+            android:id = "@+id/usernameTextViewChangeUserDetails"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            app:layout_constraintTop_toBottomOf="@id/changeUserDetailsTextViewChangeUserDetails"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="10dp"
+            android:text = "Korisničko ime:"
+            android:textSize = "20sp"
+            android:textStyle = "bold"
+            android:textColor = "@color/black"
+            android:gravity = "center"
+
+            />
+
+        <EditText
+            android:id="@+id/usernameEditTextChangeUserDetails"
+            android:layout_width="300dp"
+
+            android:layout_height="30dp"
+            android:background="@color/white"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/usernameTextViewChangeUserDetails"/>
+
+
+
+
+        <TextView
+            android:id="@+id/firstNameTextViewChangeUserDetails"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Ime:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/usernameEditTextChangeUserDetails" />
+
+        <EditText
+            android:id = "@+id/firstNameEditTextChangeUserDetails"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+
+            app:layout_constraintTop_toBottomOf="@id/firstNameTextViewChangeUserDetails"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background = "@color/white"
+
+            />
+
+        <TextView
+            android:id="@+id/lastNameTextViewChangeUserDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Prezime:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/firstNameEditTextChangeUserDetails" />
+
+        <EditText
+            android:id = "@+id/lastNameEditTextChangeUserDetails"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+
+            app:layout_constraintTop_toBottomOf="@id/lastNameTextViewChangeUserDetails"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background = "@color/white"
+
+            />
+
+
+        <TextView
+            android:id = "@+id/phoneNumberTextViewChangeUserDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            app:layout_constraintTop_toBottomOf="@id/lastNameEditTextChangeUserDetails"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="5dp"
+            android:text = "Telefon:"
+            android:textSize = "20sp"
+            android:textStyle = "bold"
+            android:textColor = "@color/black"
+            android:gravity = "center"
+
+            />
+
+        <EditText
+            android:id="@+id/phoneNumberEditTextChangeUserDetails"
+            android:layout_width="300dp"
+
+            android:layout_height="30dp"
+            android:background="@color/white"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/phoneNumberTextViewChangeUserDetails"
+            android:inputType = "phone"
+            />
+
+
+        <TextView
+            android:id="@+id/addressTextViewChangeUserDetails"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Adresa:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/phoneNumberEditTextChangeUserDetails" />
+
+        <EditText
+            android:id = "@+id/addressEditTextChangeUserDetails"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+
+            app:layout_constraintTop_toBottomOf="@id/addressTextViewChangeUserDetails"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background = "@color/white"
+
+            />
+
+        <TextView
+            android:id="@+id/oldPasswordTextViewChangeUserDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Stara lozinka:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/addressEditTextChangeUserDetails" />
+
+        <EditText
+            android:id = "@+id/oldPasswordEditTextChangeUserDetails"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+
+            android:inputType = "textPassword"
+
+            app:layout_constraintTop_toBottomOf="@id/oldPasswordTextViewChangeUserDetails"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background = "@color/white"
+
+            />
+
+
+        <TextView
+            android:id="@+id/newPasswordTextViewChangeUserDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Nova lozinka:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/oldPasswordEditTextChangeUserDetails" />
+
+        <EditText
+            android:id = "@+id/newPasswordEditTextChangeUserDetails"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+
+            android:inputType = "textPassword"
+
+            app:layout_constraintTop_toBottomOf="@id/newPasswordTextViewChangeUserDetails"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background = "@color/white"
+
+            />
+
+        <TextView
+            android:id="@+id/newPasswordConfirmedTextViewChangeUserDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Potvrda nove lozinke:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/newPasswordEditTextChangeUserDetails" />
+
+        <EditText
+            android:id = "@+id/newPasswordConfirmedEditTextChangeUserDetails"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+
+            android:inputType = "textPassword"
+
+            app:layout_constraintTop_toBottomOf="@id/newPasswordConfirmedTextViewChangeUserDetails"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background = "@color/white"
+
+            />
+
+
+        <Button
+            android:id = "@+id/changeUserDetailsButtonChangeUserDetails"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+
+            android:background = "@color/button_color"
+
+            android:layout_marginTop="20dp"
+
+            app:layout_constraintTop_toBottomOf="@id/newPasswordConfirmedEditTextChangeUserDetails"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text = "Promeni"
+            />
+
+        <TextView
+            android:id = "@+id/errorTextViewChangeUserDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:textSize = "20sp"
+            android:textStyle = "bold"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/changeUserDetailsButtonChangeUserDetails"
+
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

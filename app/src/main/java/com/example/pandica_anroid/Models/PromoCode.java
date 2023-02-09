@@ -9,6 +9,12 @@ public class PromoCode {
 
     static {
         promoCodes = new LinkedList<>();
+
+        PromoCode p1 = new PromoCode(1, "Bozic", 10, 50);
+        PromoCode p2 = new PromoCode(2, "2023", 5, 40);
+
+        promoCodes.add(p1);
+        promoCodes.add(p2);
     }
 
     private int id;
