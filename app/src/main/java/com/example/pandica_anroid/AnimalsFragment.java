@@ -25,13 +25,13 @@ import com.example.pandica_anroid.Models.BoughtTicket;
 public class AnimalsFragment extends Fragment {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_animals, container, false);
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                Bundle savedInstanceState) {
+            // Inflate the layout for this fragment
+            View view = inflater.inflate(R.layout.fragment_animals, container, false);
 
-        //setting title
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Pandica");
+            //setting title
+            ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Pandica");
 
         setHasOptionsMenu(true);
         return view;

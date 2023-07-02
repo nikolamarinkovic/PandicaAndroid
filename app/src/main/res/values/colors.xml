@@ -39,6 +39,13 @@
     <color name="profile_color_bg">#C6F5C781</color>
     <color name="profile_button_bg">#FFD600</color>
 
+    <color name="animal_comments_bg">#C9FFD338</color>
+    <color name="animal_post_comment_bg">#A6753B</color>
+    <color name="animal_change_comment_button_bg">#FFEC43</color>
+    <color name="animal_delete_comment_button_bg">#FF2C2C</color>
+    <color name="animal_submit_comment_change_button_bg">#2FFD2B</color>
+
+
 
 
 

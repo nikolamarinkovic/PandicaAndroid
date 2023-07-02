@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pandica_anroid.Models.Animal;
@@ -48,9 +49,12 @@ public class RecyclerAdapterAnimals extends RecyclerView.Adapter<RecyclerAdapter
         private TextView name;
         private ImageView image;
         private Button detailsButton;
+        private View myView;
 
         public MyViewHolder(@NonNull View view){
             super(view);
+
+            myView = view;
             name = view.findViewById(R.id.animalNameTextViewAnimalRecycler);
             image = view.findViewById(R.id.animalImageViewAnimalRecycler);
             detailsButton = view.findViewById(R.id.detailsButtonAnimalRecycler);
@@ -78,7 +82,8 @@ public class RecyclerAdapterAnimals extends RecyclerView.Adapter<RecyclerAdapter
         holder.image.setImageDrawable(context.getDrawable(drawableRes));
 
         holder.detailsButton.setOnClickListener((view) -> {
-            //TODO: add navigtation to details
+            Animal.currentAnimal = animal;
+            Navigation.findNavController(holder.myView).navigate(R.id.action_animalsFragment_to_animalDetailsFragment);
         });
 
     }

@@ -1,14 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AnimalDetailsFragment">
+    android:background="@color/color_background">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_width="match_parent"
+        >
 
-</FrameLayout>
+
+        <TextView
+            android:id = "@+id/detailsTextViewAnimalDetails"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="40dp"
+            android:text = "Detalji"
+            android:textSize = "32sp"
+            android:textStyle = "bold"
+            android:background = "@color/header_1"
+            android:textColor = "@color/white"
+            android:gravity = "center"
+
+            />
+
+        <TextView
+            android:id = "@+id/animalNameTextViewAnimalDetails"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            app:layout_constraintTop_toBottomOf="@id/detailsTextViewAnimalDetails"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="20dp"
+            android:textSize = "32sp"
+            android:textStyle = "bold"
+            android:gravity = "center"
+
+            />
+
+        <ImageView
+            android:id = "@+id/animalImageAnimalDetails"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/animalNameTextViewAnimalDetails"
+            android:layout_marginTop="10dp"
+            />
+
+        <TextView
+            android:id = "@+id/animalDescriptionAnimalDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/animalImageAnimalDetails"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="10dp"
+            android:textSize = "17sp"
+            />
+
+        <TextView
+            android:id = "@+id/commentsTextViewAnimalDetails"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            app:layout_constraintTop_toBottomOf="@id/animalDescriptionAnimalDetails"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="40dp"
+            android:text = "Komentari"
+            android:textSize = "22sp"
+            android:textStyle = "bold"
+            android:background = "@color/animal_comments_bg"
+            android:gravity = "center"
+
+            />
+
+        <LinearLayout
+            android:id = "@+id/layoutWhenUserHasNoCommentAnimalDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/commentsTextViewAnimalDetails"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            >
+
+
+            <EditText
+                android:id = "@+id/userCommentEditTextAnimalDetails"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:background = "@color/white"
+
+                android:layout_marginLeft="30dp"
+
+
+                />
+
+            <Button
+
+                android:id = "@+id/postCommentButtonAnimalDetails"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:background = "@color/animal_post_comment_bg"
+
+
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="20dp"
+                android:text = "Postavi"
+
+                />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id = "@+id/recyclerViewCommentsAnimalDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/layoutWhenUserHasNoCommentAnimalDetails"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="10dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recyclerViewCommentsAnimalDetails"
+            />
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+

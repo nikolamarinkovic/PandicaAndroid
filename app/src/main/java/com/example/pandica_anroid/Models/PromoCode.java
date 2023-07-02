@@ -11,7 +11,7 @@ public class PromoCode {
         promoCodes = new LinkedList<>();
 
         PromoCode p1 = new PromoCode(1, "Bozic", 10, 50);
-        PromoCode p2 = new PromoCode(2, "2023", 5, 40);
+        PromoCode p2 = new PromoCode(2, "2023", 5, 0);
 
         promoCodes.add(p1);
         promoCodes.add(p2);
@@ -27,6 +27,16 @@ public class PromoCode {
         this.name = name;
         this.discount = discount;
         this.numberLeft = numberLeft;
+    }
+
+    public static void cancelUse(int promoCodeId) {
+
+        for(PromoCode code : PromoCode.promoCodes){
+            if(code.getId() == promoCodeId){
+                code.setNumberLeft(code.getNumberLeft() + 1);
+                return;
+            }
+        }
     }
 
     public int getId() {

@@ -17,7 +17,7 @@ public class BoughtTicket {
         BoughtTicket b2 = new BoughtTicket(1, 0, "Regularna", 2, 1200, 2, new Date(2022,11,10),true,-1,"",0);
         BoughtTicket b3 = new BoughtTicket(2, 0, "Ucenicka", 1, 1200, 0, new Date(2022,11,10),true,-1,"",0);
 
-        BoughtTicket c1 = new BoughtTicket(3, 1, "Porodicna2", 4, 1200, 1, new Date(2022,11,10),true,-1,"",0);
+        BoughtTicket c1 = new BoughtTicket(3, 1, "Porodicna", 4, 1200, 1, new Date(2022,11,10),true,-1,"",0);
 
         boughtTickets.add(b1);
         boughtTickets.add(b2);
@@ -30,6 +30,18 @@ public class BoughtTicket {
         for(BoughtTicket ticket: BoughtTicket.boughtTickets){
             if(ticket.id == ticketId){
                 ticket.status = 3;
+
+                int promoCodeId = ticket.getPromoCodeId();
+                int i = 0;
+                for(int code: User.currentUser.getUsedPromoCodes()){
+                    if(code == promoCodeId){
+                        User.currentUser.getUsedPromoCodes().remove(i);
+                        PromoCode.cancelUse(promoCodeId);
+                        break;
+                    }
+                    i++;
+                }
+
                 initUserBoughtTickets(User.currentUser.getId());
                 return;
             }

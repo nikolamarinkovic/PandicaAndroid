@@ -10,11 +10,9 @@ public class Packet {
     static {
         packets = new LinkedList<>();
 
-        packets.add(new Packet(1, "test1", 25, 25, "sds"));
-        packets.add(new Packet(2, "test2", 25, 25, "sds"));
-        packets.add(new Packet(3, "test3", 25, 25, "sds"));
-        packets.add(new Packet(4, "tes4", 25, 25, "sds"));
-
+        packets.add(new Packet(1, "Porodicni paket", 1200, 4, "2 odrasle osobe + 2 dece"));
+        packets.add(new Packet(2, "Penzionerski paket", 650, 2, "2 penzionera"));
+        packets.add(new Packet(3, "Ucenicki paket", 350, 1, "1 student/ucenik"));
 
     }
 

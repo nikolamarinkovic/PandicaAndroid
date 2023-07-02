@@ -15,10 +15,9 @@ public class User {
         User userPera = new User( "pera","pera", "user", "Perica", "Peric", "555-333", "Pere Velimirovica 35c");
         Notification n = new Notification(1,"test", new Date(2022,10,10,15,20));
         userPera.getNotifications().add(n);
+        users.add(userPera);
 
         User userMika = new User("mika","mika", "user", "Perica", "Peric", "555-333", "Pere Velimirovica 35c");
-
-        users.add(userPera);
         users.add(userMika);
     }
 
@@ -119,10 +118,11 @@ public class User {
 
     public static boolean loginCredentialsGood(String username, String password){
         for(User e: users){
-            if(e.username.equals(username) && e.password.equals(password) && e.userType.equals("user"))
+            if(e.username.equals(username) && e.password.equals(password) && e.userType.equals("user")) {
                 currentUser = e;
                 BoughtTicket.initUserBoughtTickets(e.id);
                 return true;
+            }
         }
         return false;
     }
@@ -153,6 +153,25 @@ public class User {
 
         users.add(user);
         return "OK";
+    }
+
+    public static User getUserFromId(int userID) {
+        for(User u: User.users){
+            if(u.getId() == userID)
+                return u;
+        }
+        return null;
+    }
+
+    public static boolean userCommented() {
+        Animal currentAnimal = Animal.currentAnimal;
+        User currentUser = User.currentUser;
+
+        for(Comment c: currentAnimal.getComments()){
+            if(c.getUserId() == currentUser.getId())
+                return true;
+        }
+        return false;
     }
 
     public int getId() {
@@ -241,5 +260,35 @@ public class User {
 
     public void setUsedPromoCodes(List<Integer> usedPromoCodes) {
         this.usedPromoCodes = usedPromoCodes;
+    }
+
+    public void deleteCommentFromCurrentAnimal() {
+        int i = 0;
+        int userID = User.currentUser.getId();
+        Animal animal = Animal.currentAnimal;
+        for(Comment c : animal.getComments()){
+            if(c.getUserId() == userID){
+                animal.getComments().remove(i);
+                return;
+            }
+            i++;
+        }
+    }
+
+    public void changeComment(String newContent) {
+        for(Comment c: Animal.currentAnimal.getComments()){
+            if(c.getUserId() == User.currentUser.getId()){
+                c.setContent(newContent);
+                return;
+            }
+        }
+    }
+
+    public void postComment(String comment) {
+        Animal currentAnimal = Animal.currentAnimal;
+        User currentUser = User.currentUser;
+
+        currentAnimal.getComments().add(new Comment(currentUser.getId(), comment));
+        return;
     }
 }
